@@ -8,7 +8,8 @@
         ['OS=="mac"', {
           'xcode_settings': {
             'CLANG_CXX_LIBRARY': 'libc++',
-            'CLANG_CXX_LANGUAGE_STANDARD':'c++11'
+            'CLANG_CXX_LANGUAGE_STANDARD':'c++11',
+            "OTHER_CFLAGS": [ "-std=c++17"]
           }
         }]
       ]
