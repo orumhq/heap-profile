@@ -1,0 +1,51 @@
+{
+  "name": "heap-profile",
+  "version": "0.4.0",
+  "description": "Support for V8's sampling heap profiler",
+  "repository": "v8/sampling-heap-profiler",
+  "main": "out/src/index.js",
+  "types": "out/src/index.d.ts",
+  "scripts": {
+    "install": "node-gyp rebuild",
+    "test": "nyc ava out/test/test*.js",
+    "check": "gts check",
+    "clean": "gts clean",
+    "codecov": "nyc report --reporter=json && codecov -f coverage/*.json",
+    "compile": "tsc -p .",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run check && npm run license-check",
+    "license-check": "jsgl --local ."
+  },
+  "keywords": [],
+  "author": "Google Inc.",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "nan": "^2.14.0",
+    "pify": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/delay": "^2.0.1",
+    "@types/node": "^8.10.46",
+    "@types/pify": "^3.0.2",
+    "ava": "^0.25.0",
+    "codecov": "^3.3.0",
+    "delay": "^2.0.0",
+    "gts": "^1.0.0",
+    "js-green-licenses": "^0.2.1",
+    "nyc": "^13.3.0",
+    "typescript": "^3.x"
+  },
+  "files": [
+    "bindings/",
+    "out/src/",
+    "LICENSE",
+    "binding.gyp",
+    "package.json"
+  ],
+  "engines": {
+    "node": ">=8"
+  }
+}
